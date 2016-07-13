@@ -6,7 +6,7 @@ class CreateRecipes < ActiveRecord::Migration
       t.text       :description, null: false
       t.text       :instructions, null: false
       t.references :user, null: false
-      t.references :category_id, null: false
+      t.references :category, null: false
 
       t.timestamps null: false
     end
