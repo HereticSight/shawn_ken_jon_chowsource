@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'application#hello'
+  root 'staticpages#index'
+
+  
   resources :users
   resources :sessions, only: [:create, :destroy]
   resources :recipes
