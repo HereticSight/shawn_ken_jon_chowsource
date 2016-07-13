@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Amount Of Ingredients</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Amount</th>
+      <th>Recipe</th>
+      <th>Ingredient</th>
+      <th>Measurement</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @amount_of_ingredients.each do |amount_of_ingredient| %>
+      <tr>
+        <td><%= amount_of_ingredient.amount %></td>
+        <td><%= amount_of_ingredient.recipe %></td>
+        <td><%= amount_of_ingredient.ingredient %></td>
+        <td><%= amount_of_ingredient.measurement %></td>
+        <td><%= link_to 'Show', amount_of_ingredient %></td>
+        <td><%= link_to 'Edit', edit_amount_of_ingredient_path(amount_of_ingredient) %></td>
+        <td><%= link_to 'Destroy', amount_of_ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Amount of ingredient', new_amount_of_ingredient_path %>
