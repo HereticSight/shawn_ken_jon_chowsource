@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
   root 'application#hello'
-  resources: user
-  resources: sessions only: [:create, :destroy]
+  resources :users
+  resources :sessions, only: [:create, :destroy]
 end
