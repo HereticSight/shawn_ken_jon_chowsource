@@ -31,6 +31,7 @@ group :development do
 end
 
 group :test do
+  gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'minitest-reporters',     '1.1.9'
