@@ -45,14 +45,14 @@ ActiveRecord::Schema.define(version: 20160713195153) do
   end
 
   create_table "recipes", force: :cascade do |t|
-    t.string   "name",           limit: 120
-    t.integer  "difficulty",                 null: false
-    t.text     "description",                null: false
-    t.text     "instructions",               null: false
-    t.integer  "user_id",                    null: false
-    t.integer  "category_id_id",             null: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "name",         limit: 120
+    t.integer  "difficulty",               null: false
+    t.text     "description",              null: false
+    t.text     "instructions",             null: false
+    t.integer  "user_id",                  null: false
+    t.integer  "category_id",              null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "users", force: :cascade do |t|
