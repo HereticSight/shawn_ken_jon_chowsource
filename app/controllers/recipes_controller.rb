@@ -2,6 +2,8 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :update, :edit, :destroy]
 
   def show
+    @recipe = Recipe.find(params[:id])
+    render 'recipes/show'
   end
 
   def new
