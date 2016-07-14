@@ -96,6 +96,15 @@ Measurement.create({ name: "1/8's" })
 		})
 end
 
+5.times do |i|
+	Rating.create({
+		rating: 	i+1,
+		user: 		User.find(i+1),
+		recipe: 	Recipe.find(1)
+		})
+end
+
+
 
 
 
