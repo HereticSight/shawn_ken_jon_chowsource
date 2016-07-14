@@ -5,3 +5,11 @@
 <div class="recipe-instructions">Instructions: <%= @recipe.instructions %></div>
 <div class="recipe-category">Category: <%= link_to @recipe.category.name, @recipe.category %></div>
 <div class="rating">Rating: <%= @recipe.rating %> (<%= @recipe.ratings.length %>)</div>
+
+<div class="rating-form">
+	<%= form_tag ratings_url, method:'post' do |f| %>
+		<%= hidden_field_tag :recipe_id, @recipe.id %>
+		Rating: <%= select_tag :value, options_for_select([[1,1],[2,2],[3,3],[4,4],[5,5]]) %><br>
+	  <%= submit_tag "Submit", class: "btn btn-primary" %>
+	<% end %>
+</div>

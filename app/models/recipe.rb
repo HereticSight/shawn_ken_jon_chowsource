@@ -13,11 +13,6 @@ class Recipe < ActiveRecord::Base
   	if ratings.length == 0
   		return 0
   	end
-  	sum = 0
-  	ratings.each do |rating|
-  		sum += rating.rating
-  	end
-  	sum = sum * 1.0
-  	sum / ratings.length
+  	ratings.reduce(0) { |sum,rating| sum + rating.value/ratings.length.to_f }
   end
 end
