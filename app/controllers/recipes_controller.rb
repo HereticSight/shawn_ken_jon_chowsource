@@ -15,7 +15,6 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-    # binding.pry
     @categories = Category.all
     if @recipe.save
       redirect_to root_path
