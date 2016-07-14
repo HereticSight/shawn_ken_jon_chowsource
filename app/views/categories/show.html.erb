@@ -1,6 +1,21 @@
 <h1><%= @category.name %></h1>
 <div class="recipes-container">
-	<% @category.recipes.each do |recipe| %>
-		<%= link_to recipe.name, recipe %><br>
-	<% end %>
+
+<%= will_paginate @recipes %>
+  <% @recipes.each do |recipe| %>
+  	<div id="<%= "recipe-#{recipe.id}"%>" class="recipe-holder">
+      <table>
+        <tr>
+          <td><%= link_to recipe.name, recipe %></td>
+        </tr>
+        <tr>
+          <td>by <%= recipe.submitter.name %></td>
+        </tr>
+        <tr>
+          <td>Rating: <%= recipe.rating %></td>
+        </tr>
+      </table>
+  	</div>
+    <br>
+  <% end %>
 </div>
