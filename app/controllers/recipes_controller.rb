@@ -14,6 +14,7 @@ class RecipesController < ApplicationController
       redirect_to recipe_rout(recipe.id)
     else
       render 'new'
+    end
   end
 
   def update

@@ -1,2 +1,19 @@
-<h1>Recipes#new</h1>
-<p>Find me in app/views/recipes/new.html.erb</p>
+<h1>Make a new Recipe</h1>
+
+
+<%= form_for @recipe do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+
+  <%= f.label :difficulty %>
+  <%= number_field_tag 'quantity', nil, min: 1, max: 10, class: 'form-control' %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description, class: 'form-control' %>
+
+  <%= f.label :instructions %>
+  <%= f.text_area :instructions, cols: "30", rows: "10" class: 'form-control' %>
+
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
