@@ -1,5 +1,6 @@
 <h1>Make a new Recipe</h1>
 
+<%= render partial: 'shared/errors', locals: { object: @recipe } %>
 
 <%= form_for @recipe do |f| %>
 
