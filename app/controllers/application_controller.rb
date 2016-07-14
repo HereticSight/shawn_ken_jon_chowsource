@@ -28,4 +28,11 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def redirect_login
+    if logged_in?
+      flash[:warning] = "You are already logged in."
+      redirect_to root_path
+    end
+  end
 end

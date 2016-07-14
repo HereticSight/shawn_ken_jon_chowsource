@@ -55,11 +55,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email,
                                  :password, :password_confirmation)
   end
-
-  def redirect_login
-    if logged_in?
-      flash[:warning] = "You cannot create a new account if you are already logged in."
-      redirect_to root_path
-    end
-  end
 end
