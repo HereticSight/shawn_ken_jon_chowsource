@@ -3,6 +3,10 @@
 
 <%= form_for @recipe do |f| %>
 
+  <%= f.hidden_field :user_id, value: '@current_user.id' %>
+
+  <%= select_tag :categories, options_for_select(@categories.collect{ |c| [c.name, u.id] }), class: 'form-control' %>
+
   <%= f.label :name %>
   <%= f.text_field :name, class: 'form-control' %>
 
@@ -13,7 +17,7 @@
   <%= f.text_field :description, class: 'form-control' %>
 
   <%= f.label :instructions %>
-  <%= f.text_area :instructions, cols: "30", rows: "10" class: 'form-control' %>
+  <%= f.text_area :instructions, cols: "30", rows: "10", class: 'form-control' %>
 
   <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>
