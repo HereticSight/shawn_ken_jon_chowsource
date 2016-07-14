@@ -5,13 +5,14 @@
 
   <%= f.hidden_field :user_id, value: '@current_user.id' %>
 
-  <%= select_tag :categories, options_for_select(@categories.collect{ |c| [c.name, c.id] }), class: 'form-control' %>
+  <%= f.label :category %>
+  <%= select_tag 'recipe[category_id]', options_for_select(@categories.collect{ |c| [c.name, c.id] }), class: 'form-control' %>
 
   <%= f.label :name %>
   <%= f.text_field :name, class: 'form-control' %>
 
   <%= f.label :difficulty %>
-  <%= number_field_tag 'quantity', nil, min: 1, max: 10, class: 'form-control' %>
+  <%= f.number_field :difficulty, min: 1, max: 10, class: 'form-control' %>
 
   <%= f.label :description %>
   <%= f.text_field :description, class: 'form-control' %>

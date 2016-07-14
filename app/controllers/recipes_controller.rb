@@ -9,13 +9,14 @@ class RecipesController < ApplicationController
   end
 
   def new
+    @categories = Category.all
     @recipe = Recipe.new
   end
 
   def create
-    @recipe = Recipe.build(recipe_params)
-    @categories = Categories.all
-
+    @recipe = Recipe.new(recipe_params)
+    binding.pry
+    @categories = Category.all
     if @recipe.save
       redirect_to @recipe
     else
