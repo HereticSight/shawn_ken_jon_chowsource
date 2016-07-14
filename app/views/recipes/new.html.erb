@@ -3,7 +3,7 @@
 
 <%= form_for @recipe do |f| %>
 
-  <%= f.hidden_field :user_id, value: '@current_user.id' %>
+  <%= f.hidden_field :user_id, value: @current_user.id %>
 
   <%= f.label :category %>
   <%= select_tag 'recipe[category_id]', options_for_select(@categories.collect{ |c| [c.name, c.id] }), class: 'form-control' %>
