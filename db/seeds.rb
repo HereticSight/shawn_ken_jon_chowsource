@@ -21,49 +21,72 @@ Category.create({ name: "Dinner"})
 Category.create({ name: "Dessert"})
 Category.create({ name: "Beverages"})
 
+# Basic Ingredients
+Ingredient.create({ name: "Salt", description: "Very tasty" })
+Ingredient.create({ name: "Sugar", description: "Very tasty" })
+Ingredient.create({ name: "Flour", description: "Very tasty" })
+Ingredient.create({ name: "Flowers", description: "Very tasty" })
+Ingredient.create({ name: "Raisins", description: "Very tasty" })
+Ingredient.create({ name: "Almins", description: "Very tasty" })
+
+# Basic Measurements
+Measurement.create({ name: "metrics" })
+Measurement.create({ name: "cups" })
+Measurement.create({ name: "cones" })
+Measurement.create({ name: "scoops" })
+Measurement.create({ name: "globs" })
+Measurement.create({ name: "units" })
+Measurement.create({ name: "units of measurement" })
+Measurement.create({ name: "forths" })
+Measurement.create({ name: "1/8's" })
 
 # Basic Recipes
-Recipe.create({
-	name: "Soup", 
-	difficulty: 1, 
-	description: "Great soup", 
+Recipe.create!({
+	name: 				"Soup", 
+	difficulty: 	1, 
+	description: 	"Great soup", 
 	instructions: "Bop it, stop it, grab it, Pop it.",
-	user_id: 1, 
-	category_id: 1
+	user: 				User.find(1),
+	category: 		Category.find(1)
 	})
 
-Recipe.create({
-	name: "Soup", 
-	difficulty: 1, 
-	description: "Great soup", 
+Recipe.create!({
+	name: 				"Soup", 
+	difficulty: 	1, 
+	description: 	"Great soup", 
 	instructions: "Bop it, stop it, grab it, Pop it.",
-	user_id: 1, 
-	category_id: 2
+	user: 				User.find(1),
+	category: 		Category.find(2)
 	})
 
-Recipe.create({
-	name: "Chocolate", 
-	difficulty: 1, 
-	description: "Great soup", 
+Recipe.create!({
+	name: 				"Chocolate", 
+	difficulty: 	1, 
+	description: 	"Great soup", 
 	instructions: "Bop it, stop it, grab it, Pop it.",
-	user_id: 1, 
-	category_id: 3
+	user: 				User.find(1),
+	category: 		Category.find(3)
 	})
 
-Recipe.create({
-	name: "Raspberries", 
-	difficulty: 1, 
-	description: "Great soup", 
+Recipe.create!({
+	name: 				"Raspberries", 
+	difficulty: 	1, 
+	description: 	"Great soup", 
 	instructions: "Bop it, stop it, grab it, Pop it.",
-	user_id: 1, 
-	category_id: 4
+	user: 				User.find(1),
+	category: 		Category.find(4)
 	})
 
-Recipe.create({
-	name: "Sandwich", 
-	difficulty: 1, 
-	description: "Great soup", 
+Recipe.create!({
+	name: 				"Sandwich", 
+	difficulty: 	1, 
+	description: 	"Great soup", 
 	instructions: "Bop it, stop it, grab it, Pop it.",
-	user_id: 1, 
-	category_id: 5
+	user: 				User.find(1),
+	category: 		Category.find(5)
 	})
+
+
+
+
+

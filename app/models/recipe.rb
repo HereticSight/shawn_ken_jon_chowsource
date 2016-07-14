@@ -5,5 +5,5 @@ class Recipe < ActiveRecord::Base
   has_many   :ingredients, through: :recipe_ingredients, source: :ingredients
 
   validates :user, uniqueness: { scope: :category }
-  validates :user, :category, :recipe_ingredients, presence: true
+  validates :user, :category, presence: true
 end
