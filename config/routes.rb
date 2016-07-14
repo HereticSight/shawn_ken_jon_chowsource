@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'ratings/create'
+
+  get 'ratings/edit'
+
   root 'staticpages#index'
 
 

@@ -32,7 +32,7 @@
     <type label="SET" length="1" sql="SET" quote=""/>
     <type label="Bit" length="0" sql="bit" quote=""/>
   </group>
-</datatypes><table x="115" y="70" name="users">
+</datatypes><table x="92" y="381" name="users">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -49,7 +49,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="420" y="110" name="recipes">
+<table x="445" y="433" name="recipes">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -77,7 +77,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="960" y="151" name="ingredients">
+<table x="985" y="474" name="ingredients">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -91,7 +91,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="188" y="240" name="categories">
+<table x="199" y="574" name="categories">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -102,7 +102,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="670" y="131" name="amount_of_ingredients">
+<table x="695" y="454" name="amount_of_ingredients">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -125,13 +125,32 @@
 <part>id</part>
 </key>
 </table>
-<table x="961" y="269" name="measurements">
+<table x="986" y="592" name="measurements">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="name" null="0" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>'NOT NULL'</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="305" y="224" name="Ratings">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Rating" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>0</default></row>
+<row name="user_id" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NOT NULL</default><relation table="users" row="id" />
+</row>
+<row name="recipe_id" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NOT NULL</default><relation table="recipes" row="id" />
+</row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
