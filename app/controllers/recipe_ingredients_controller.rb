@@ -5,12 +5,17 @@ class RecipeIngredientsController < ApplicationController
   end
 
   def create
-
+    @recipe_ingredient = RecipeIngredient.create(recipe_ingredients_params)
   end
 
   def update
   end
 
   def destroy
+  end
+
+  private
+  def recipe_ingredients_params
+    params.require(:recipe_ingredient).permit(:recipe_id , :amount, :ingredient, :measurement)
   end
 end
