@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     if logged_in?
       session[:user_id] = nil
       @current_user = nil
