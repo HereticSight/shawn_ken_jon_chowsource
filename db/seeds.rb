@@ -51,47 +51,47 @@ Measurement.create({ name: "1/8's" })
 # Basic Recipes
 10.times do |i|
 	Recipe.create!({
-		name: 				"Soup", 
-		difficulty: 	1, 
-		description: 	"Great soup", 
+		name: 				"Soup",
+		difficulty: 	1,
+		description: 	"Great soup",
 		instructions: "Bop it, stop it, grab it, Pop it.",
-		user: 				User.find(i+1),
+		submitter: 		User.find(i+1),
 		category: 		Category.find(1)
 		})
 
 	Recipe.create!({
-		name: 				"Soup", 
-		difficulty: 	1, 
-		description: 	"Great soup", 
+		name: 				"Soup",
+		difficulty: 	1,
+		description: 	"Great soup",
 		instructions: "Bop it, stop it, grab it, Pop it.",
-		user: 				User.find(i+1),
+		submitter: 		User.find(i+1),
 		category: 		Category.find(2)
 		})
 
 	Recipe.create!({
-		name: 				"Chocolate", 
-		difficulty: 	1, 
-		description: 	"Great soup", 
+		name: 				"Chocolate",
+		difficulty: 	1,
+		description: 	"Great soup",
 		instructions: "Bop it, stop it, grab it, Pop it.",
-		user: 				User.find(i+1),
+		submitter: 		User.find(i+1),
 		category: 		Category.find(3)
 		})
 
 	Recipe.create!({
-		name: 				"Raspberries", 
-		difficulty: 	1, 
-		description: 	"Great soup", 
+		name: 				"Raspberries",
+		difficulty: 	1,
+		description: 	"Great soup",
 		instructions: "Bop it, stop it, grab it, Pop it.",
-		user: 				User.find(i+1),
+		submitter: 		User.find(i+1),
 		category: 		Category.find(4)
 		})
 
 	Recipe.create!({
-		name: 				"Sandwich", 
-		difficulty: 	1, 
-		description: 	"Great soup", 
+		name: 				"Sandwich",
+		difficulty: 	1,
+		description: 	"Great soup",
 		instructions: "Bop it, stop it, grab it, Pop it.",
-		user: 				User.find(i+1),
+		submitter: 		User.find(i+1),
 		category: 		Category.find(5)
 		})
 end
