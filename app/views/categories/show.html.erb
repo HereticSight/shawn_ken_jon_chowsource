@@ -1,6 +1,6 @@
 <h1><%= @category.name %></h1>
 <div class="recipes-container">
 	<% @category.recipes.each do |recipe| %>
-		<%= link_to recipe.name, recipe %>
+		<%= link_to recipe.name, recipe %><br>
 	<% end %>
 </div>

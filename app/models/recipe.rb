@@ -3,7 +3,21 @@ class Recipe < ActiveRecord::Base
   belongs_to :category
   has_many   :recipe_ingredients, dependent: :destroy
   has_many   :ingredients, through: :recipe_ingredients, source: :ingredients
+  has_many 	 :ratings
+
 
   validates :submitter, uniqueness: { scope: :category }
   validates :submitter, :category, presence: true
+
+  def rating
+  	if ratings.length == 0
+  		return 0
+  	end
+  	sum = 0
+  	ratings.each do |rating|
+  		sum += rating.rating
+  	end
+  	sum = sum * 1.0
+  	sum / ratings.length
+  end
 end

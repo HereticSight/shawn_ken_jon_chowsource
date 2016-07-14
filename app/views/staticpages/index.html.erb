@@ -1,14 +1,12 @@
 
 <div id="todays-menu">
 	<h1>Today's Menu</h1>
-	<nav class="categories-container">
+	<div class="categories-container">
 	<% @categories.each do |category| %>
 		<h2><%= link_to category.name, category %></h2>
 		<div class="recipes-container">
-		<% category.recipes.first(5).each do |recipe| %>
-			<%= link_to recipe.name, recipe %>
-		<% end %>
+		<%= link_to category.highest_rated_recipe.name, category.highest_rated_recipe %>
 		</div>
 	<% end %>
-	</nav>
+	</div>
 </div>
