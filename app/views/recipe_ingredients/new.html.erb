@@ -1,0 +1,17 @@
+<h1>Add Ingredient</h1>
+  <%= render 'shared/errors', locals: { object: @ingredient } %>
+<%= form_for [@recipe, @recipe_ingredient] do |f| %>
+
+  <%= f.hidden_field :recipe_id, value: @recipe.id %>
+
+  <%= f.label :amount %>
+  <%= f.number_field :amount, min: 0, max: 10000, class: 'form-control' %>
+
+  <%= f.label :ingredient %>
+  <%= f.text_field :ingredient, class: 'form-control' %>
+
+  <%= f.label :measurement %>
+  <%= f.text_field :measurement, class: 'form-control' %>
+
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
