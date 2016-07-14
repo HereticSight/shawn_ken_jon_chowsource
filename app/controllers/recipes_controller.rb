@@ -19,7 +19,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @categories = Category.all
     if @recipe.save
-      redirect_to new_recipe_recipe_ingredients_path
+      redirect_to new_recipe_recipe_ingredient_path(@recipe)
     else
       flash[:danger] = "There was an error saving your recipe"
       render 'new'
