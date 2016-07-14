@@ -35,4 +35,11 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def redirect_anon
+    unless logged_in?
+      flash[:warning] = "You must be logged in to do this."
+      redirect_to root_path
+    end
+  end
 end
