@@ -13,6 +13,14 @@ User.create({
 	password: "grandma"
 	})
 
+10.times do
+	User.create({
+		name: Faker::Name.name,
+		email: Faker::Internet.email,
+		password: "password"
+	})
+end
+
 
 # Basic Categories
 Category.create({ name: "Breakfast"})
@@ -41,51 +49,52 @@ Measurement.create({ name: "forths" })
 Measurement.create({ name: "1/8's" })
 
 # Basic Recipes
-Recipe.create!({
-	name: 				"Soup", 
-	difficulty: 	1, 
-	description: 	"Great soup", 
-	instructions: "Bop it, stop it, grab it, Pop it.",
-	user: 				User.find(1),
-	category: 		Category.find(1)
-	})
+10.times do |i|
+	Recipe.create!({
+		name: 				"Soup", 
+		difficulty: 	1, 
+		description: 	"Great soup", 
+		instructions: "Bop it, stop it, grab it, Pop it.",
+		user: 				User.find(i+1),
+		category: 		Category.find(1)
+		})
 
-Recipe.create!({
-	name: 				"Soup", 
-	difficulty: 	1, 
-	description: 	"Great soup", 
-	instructions: "Bop it, stop it, grab it, Pop it.",
-	user: 				User.find(1),
-	category: 		Category.find(2)
-	})
+	Recipe.create!({
+		name: 				"Soup", 
+		difficulty: 	1, 
+		description: 	"Great soup", 
+		instructions: "Bop it, stop it, grab it, Pop it.",
+		user: 				User.find(i+1),
+		category: 		Category.find(2)
+		})
 
-Recipe.create!({
-	name: 				"Chocolate", 
-	difficulty: 	1, 
-	description: 	"Great soup", 
-	instructions: "Bop it, stop it, grab it, Pop it.",
-	user: 				User.find(1),
-	category: 		Category.find(3)
-	})
+	Recipe.create!({
+		name: 				"Chocolate", 
+		difficulty: 	1, 
+		description: 	"Great soup", 
+		instructions: "Bop it, stop it, grab it, Pop it.",
+		user: 				User.find(i+1),
+		category: 		Category.find(3)
+		})
 
-Recipe.create!({
-	name: 				"Raspberries", 
-	difficulty: 	1, 
-	description: 	"Great soup", 
-	instructions: "Bop it, stop it, grab it, Pop it.",
-	user: 				User.find(1),
-	category: 		Category.find(4)
-	})
+	Recipe.create!({
+		name: 				"Raspberries", 
+		difficulty: 	1, 
+		description: 	"Great soup", 
+		instructions: "Bop it, stop it, grab it, Pop it.",
+		user: 				User.find(i+1),
+		category: 		Category.find(4)
+		})
 
-Recipe.create!({
-	name: 				"Sandwich", 
-	difficulty: 	1, 
-	description: 	"Great soup", 
-	instructions: "Bop it, stop it, grab it, Pop it.",
-	user: 				User.find(1),
-	category: 		Category.find(5)
-	})
-
+	Recipe.create!({
+		name: 				"Sandwich", 
+		difficulty: 	1, 
+		description: 	"Great soup", 
+		instructions: "Bop it, stop it, grab it, Pop it.",
+		user: 				User.find(i+1),
+		category: 		Category.find(5)
+		})
+end
 
 
 

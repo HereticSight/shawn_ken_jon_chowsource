@@ -1,9 +1,14 @@
-<h1>Home Page</h1>
-<p>Find me in app/views/staticpages/index.html.erb</p>
 
-<h2>Categories</h2>
-<div class="categories-container">
+<div id="todays-menu">
+	<h1>Today's Menu</h1>
+	<nav class="categories-container">
 	<% @categories.each do |category| %>
-		<%= link_to category.name, category %>
+		<h2><%= link_to category.name, category %></h2>
+		<div class="recipes-container">
+		<% category.recipes.first(5).each do |recipe| %>
+			<%= link_to recipe.name, recipe %>
+		<% end %>
+		</div>
 	<% end %>
+	</nav>
 </div>
