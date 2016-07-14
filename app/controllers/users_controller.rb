@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :delete]
+  before_action :correct_user, only: [:show, :edit, :update, :delete]
+  before_action :redirect_login, only: [:new, :create]
+
 
   def index
     @users = User.all
@@ -12,6 +15,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
       flash[:success] = "Account successfully created."
       redirect_to @user
     else
@@ -36,6 +40,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @user.destroy
+    session[:user_id] = nil
+    @current_user = nil
   end
 
   private
@@ -47,5 +54,12 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email,
                                  :password, :password_confirmation)
+  end
+
+  def redirect_login
+    if logged_in?
+      flash[:warning] = "You cannot create a new account if you are already logged in."
+      redirect_to root_path
+    end
   end
 end
