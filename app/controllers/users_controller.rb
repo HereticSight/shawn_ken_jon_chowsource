@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :patch, :destroy]
-  before_action :correct_user, only: [:edit, :patch, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :redirect_login, only: [:new, :create]
 
 
@@ -19,7 +19,9 @@ class UsersController < ApplicationController
       flash[:success] = "Account successfully created."
       redirect_to @user
     else
-      render 'users/new'
+      @errors = @user.errors.full_messages
+      flash.now[:danger] = "There was an issue creating your account"
+      render 'new'
     end
   end
 
@@ -30,12 +32,14 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def patch
+  def update
     @user.update_attributes(user_params)
     if @user.save
       flash[:success] = "Account successfully updated."
       redirect_to @user
     else
+      flash.now[:danger] = "Account update failed:"
+      @errors = @user.errors.full_messages
       render 'users/edit'
     end
   end
