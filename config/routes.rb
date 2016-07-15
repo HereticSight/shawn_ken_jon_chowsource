@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'staticpages#index'
-  resources :ratings, only: [:create, :edit]
+  resources :ratings, only: [:create, :update]
   resources :users
   resources :sessions, only: [:new, :create]
   delete '/sessions', to: 'sessions#destroy'
