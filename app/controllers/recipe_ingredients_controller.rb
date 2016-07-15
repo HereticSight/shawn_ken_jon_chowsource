@@ -6,9 +6,9 @@ class RecipeIngredientsController < ApplicationController
 
   def create
     @recipe = Recipe.find_by(id: params[:recipe_id])
-    @ingredient = Ingredient.find_or_initialize_by(name: params[:recipe_ingredient][:name])
-    @measurement = Measurement.find_or_initialize_by(name: params[:recipe_ingredient][:name])
-    # binding.pry
+    @ingredient = Ingredient.find_or_initialize_by(name: params[:recipe_ingredient][:ingredient])
+    @measurement = Measurement.find_or_initialize_by(name: params[:recipe_ingredient][:measurement])
+    binding.pry
     if @ingredient.save && @measurement.save
       @recipe_ingredient = RecipeIngredient.new(amount: params[:recipe_ingredients][:amount], ingredient: @ingredient, measurement: @measurement, recipe: @recipe)
       if @recipe_ingredient.save
