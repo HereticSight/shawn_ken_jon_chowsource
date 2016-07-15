@@ -5,7 +5,7 @@ class Recipe < ActiveRecord::Base
   has_many :ingredients, through: :recipe_ingredients, source: :ingredient
   has_many   :ratings
   validates :submitter, uniqueness: { scope: :category }
-  validates :submitter, :category, presence: true
+  validates :submitter, :instructions, :category,:name, :difficulty, :description, presence: true
 
   def rating
   	if ratings.length == 0
