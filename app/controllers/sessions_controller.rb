@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       log_in @user
       redirect_to @user
     else
+      @errors = ['Incorrect email and password combination']
       flash.now[:warning] = "There was an error logging you in:"
       render 'sessions/new'
     end

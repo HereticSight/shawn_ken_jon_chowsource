@@ -1,5 +1,5 @@
 <div class="container">
   <h1> New Account Form:</h1>
-
+  <%= render partial: 'shared/errors', locals: { errors: @errors } %>
   <%= render 'form' %>
 </div>
