@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :delete]
-  before_action :correct_user, only: [:show, :edit, :update, :delete]
+  before_action :set_user, only: [:show, :edit, :patch, :destroy]
+  before_action :correct_user, only: [:edit, :patch, :destroy]
   before_action :redirect_login, only: [:new, :create]
 
 
@@ -24,12 +24,13 @@ class UsersController < ApplicationController
   end
 
   def show
+    @categories = @user.categories
   end
 
   def edit
   end
 
-  def update
+  def patch
     @user.update_attributes(user_params)
     if @user.save
       flash[:success] = "Account successfully updated."
@@ -43,6 +44,8 @@ class UsersController < ApplicationController
     @user.destroy
     session[:user_id] = nil
     @current_user = nil
+    flash[:success] = "Account has been deleted."
+    redirect_to root_path
   end
 
   private

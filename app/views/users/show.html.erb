@@ -1,1 +1,19 @@
-<h1>Hello <%= @user.name %>!</h1>
+<div class="container">
+  <h1><%= @user.name %>'s Profile</h1>
+
+  <% if @categories %>
+    <% @categories.each do |category| %>
+      <table>
+        <tr>
+          <td><h3><%= category.name %></h3></td>
+        </tr>
+        <tr>
+          <td><%= link_to category.recipes.find_by(submitter: @user).name, category.recipes.find_by(submitter: @user) %></td>
+        </tr>
+        <tr>
+          <td>Rating: <%= category.recipes.find_by(submitter: @user).rating %></td>
+        </tr>
+      </table>
+    <% end %>
+  <% end %>
+</div>
