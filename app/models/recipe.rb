@@ -4,6 +4,7 @@ class Recipe < ActiveRecord::Base
   has_many   :recipe_ingredients, dependent: :destroy
   has_many   :ingredients, through: :recipe_ingredients, source: :ingredient
   has_many   :ratings
+  has_many   :raters, through: :ratings, source: :rater
 
   validates :submitter, uniqueness: { scope: :category }
   validates :submitter, :instructions, :category,:name, :difficulty, :description, presence: true
