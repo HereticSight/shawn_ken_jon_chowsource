@@ -4,9 +4,20 @@
 	<div class="categories-container">
 	<% @categories.each do |category| %>
 		<h2><%= link_to category.name, category %></h2>
-		<div class="recipes-container">
-		<%= link_to category.highest_rated_recipe.name, category.highest_rated_recipe %>
-		</div>
+    <div id="<%= "recipe-#{category.highest_rated_recipe.id}"%>" class="recipe-holder">
+      <table>
+        <tr>
+          <td><%= link_to category.highest_rated_recipe.name, category.highest_rated_recipe %></td>
+        </tr>
+        <tr>
+          <td>by <%= category.highest_rated_recipe.submitter.name %></td>
+        </tr>
+        <tr>
+          <td>Rating: <%= category.highest_rated_recipe.rating %></td>
+        </tr>
+      </table>
+    </div>
+    <br>
 	<% end %>
 	</div>
 </div>
