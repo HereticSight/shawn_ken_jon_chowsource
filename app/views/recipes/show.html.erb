@@ -1,10 +1,24 @@
-<h1><%= @recipe.name %></h1>
-<div class="author">By <%= @recipe.submitter.name %></div>
-<div class="recipe-difficulty">Difficulty Level: <%= @recipe.difficulty %></div>
-<div class="description recipe-description">Description: <%= @recipe.description %></div>
-<div class="recipe-instructions">Instructions: <%= @recipe.instructions %></div>
-<div class="recipe-category">Category: <%= link_to @recipe.category.name, @recipe.category %></div>
-<div class="rating">Rating: <%= @recipe.rating %> (<%= @recipe.ratings.length %>)</div>
+<div id='recipe-info'>
+    <h1>Category: <%= link_to @recipe.category.name, @recipe.category %></h1>
+    <h1><%= @recipe.name %></h1>
+    <h3>Rating: <%= @recipe.rating %> of (<%= @recipe.ratings.length %>)</h3>
+    <h3>By <%= @recipe.submitter.name %></h3>
+    <h3>Difficulty Level: <%= @recipe.difficulty %></h3>
+    <h4>Description: <%= @recipe.description %></h4>
+</div>
+
+<h3>Ingredients:</h3>
+<ul class='ingredient-list'>
+    <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
+        <p><%= recipe_ingredient.amount %> <%= recipe_ingredient.measurement.name %> - <%= recipe_ingredient.ingredient.name %></p>
+    <% end %>
+</ul>
+
+<div class='recipe-instruction'
+    <h3>Instructions:</h3>
+    <p><%= @recipe.instructions %></p>
+</div>
+
 
 <% if @current_user %>
   <% if @current_user.rated?(@recipe) %>
