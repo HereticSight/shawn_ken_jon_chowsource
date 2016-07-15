@@ -7,7 +7,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    @rating = Rating.find_or_initialize_by(user: @current_user, recipe: @recipe)
+    @rating = Rating.find_or_initialize_by(rater: @current_user, recipe: @recipe)
     render 'recipes/show'
   end
 

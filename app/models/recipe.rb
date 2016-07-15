@@ -10,6 +10,6 @@ class Recipe < ActiveRecord::Base
 
   def rating
   return 0 if ratings.length < 5
-  	ratings.reduce(0) { |sum,rating| sum + rating.value/ratings.length.to_f }
+  	(ratings.reduce(0) { |sum,rating| sum + rating.value/ratings.length.to_f }).round(2)
   end
 end
