@@ -6,7 +6,9 @@ class Measurement < ActiveRecord::Base
 
   validates :name, presence: true, uniqueness: {case_sensitive: false}
 
-
+  def find_or_initialize_by(attribute)
+    find_by(attribute.downcase) || create(attribute.downcase)
+  end
 
   private
 
