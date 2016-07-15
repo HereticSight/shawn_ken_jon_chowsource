@@ -36,6 +36,7 @@ class RecipesController < ApplicationController
   end
 
   def destroy
+    @recipe.destroy
   end
 
   private
