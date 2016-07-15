@@ -14,10 +14,12 @@ class RecipeIngredientsController < ApplicationController
         flash[:success] = "Your recipe ingredient was added to your recipe."
         redirect_to new_recipe_recipe_ingredient_path(@recipe)
       else
+        @errors = @recipe_ingredient.errors.full_messages
         flash.now[:danger] = "There was an issue saving your recipe"
         render 'new'
       end
     else
+      @errors = @ingredient.errors.full_messages + @measurement.errors.full_messages
       flash.now[:danger] = "There was an issue creating your ingredient."
       render 'new'
     end
