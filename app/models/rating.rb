@@ -1,6 +1,6 @@
 class Rating < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :rater, class_name: 'User', foreign_key: "user_id"
   belongs_to :recipe
 
-  validates :recipe, uniqueness: { scope: :user }
+  validates :recipe, uniqueness: { scope: :rater }
 end
