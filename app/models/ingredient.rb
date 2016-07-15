@@ -9,7 +9,6 @@ class Ingredient < ActiveRecord::Base
 
 
   private
-
   def downcase_name
     name.downcase!
   end
