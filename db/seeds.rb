@@ -30,12 +30,12 @@ Category.create({ name: "Dessert"})
 Category.create({ name: "Beverages"})
 
 # Basic Ingredients
-Ingredient.create({ name: "Salt", description: "Very tasty" })
-Ingredient.create({ name: "Sugar", description: "Very tasty" })
-Ingredient.create({ name: "Flour", description: "Very tasty" })
-Ingredient.create({ name: "Flowers", description: "Very tasty" })
-Ingredient.create({ name: "Raisins", description: "Very tasty" })
-Ingredient.create({ name: "Almins", description: "Very tasty" })
+Ingredient.create({ name: "Salt"})
+Ingredient.create({ name: "Sugar"})
+Ingredient.create({ name: "Flour"})
+Ingredient.create({ name: "Flowers"})
+Ingredient.create({ name: "Raisins"})
+Ingredient.create({ name: "Almins"})
 
 # Basic Measurements
 Measurement.create({ name: "metrics" })
