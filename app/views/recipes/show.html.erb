@@ -40,8 +40,8 @@
   <% else %>
     <div class="rating-form">
         <%= form_for @rating do |f| %>
-            <%= hidden_field_tag :recipe_id, @recipe.id %>
-            <%= hidden_field_tag :rating_id, @rating.id %>
+            <%= hidden_field_tag 'rating[recipe_id]', @recipe.id %>
+            <%= hidden_field_tag 'rating[rating_id]', @rating.id %>
                 Rating: <%= f.select :value,
                 options_for_select([
                                     [1,1],

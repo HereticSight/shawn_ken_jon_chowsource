@@ -13,10 +13,15 @@ class RatingsController < ApplicationController
   end
 
   def update
-    @recipe = Recipe.find(params[:recipe_id])
-    @rating = Rating.find_by(rating_params[:rating_id])
-    @rating.update_attribute(:value, rating_params[:value])
-    redirect_to @recipe
+    @recipe = Recipe.find(rating_params[:recipe_id])
+    @rating = Rating.find_by(id: rating_params[:rating_id])
+    # binding.pry
+    @rating.update_attributes({value: rating_params[:value]})
+    if @rating.save
+      redirect_to @recipe
+    else
+      flash.now[:danger] = "There was an error changing your rating"
+    end
   end
 
   private
