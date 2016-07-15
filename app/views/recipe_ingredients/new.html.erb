@@ -1,5 +1,5 @@
 <h1>Add Ingredient</h1>
-  <%= render partial: 'shared/errors', locals: { object: @recipe_ingredient } %>
+
 <%= form_for [@recipe, @recipe_ingredient] do |f| %>
 
   <%= f.hidden_field :recipe_id, value: @recipe.id %>
